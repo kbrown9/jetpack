@@ -88,7 +88,7 @@ class WC_Services_Installer {
 	public function error_notice() {
 		?>
 		<div class="notice notice-error is-dismissible">
-			<p><?php _e( 'There was an error installing WooCommerce Services.', 'jetpack' ); ?></p>
+			<p><?php _e( 'This site is private.', 'jetpack' ); ?></p>
 		</div>
 		<?php
 	}
