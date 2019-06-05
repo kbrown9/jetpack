@@ -20,6 +20,8 @@ if ( ! class_exists( 'Jetpack_Contact_Info_Widget' ) ) {
 		 * Constructor
 		 */
 		function __construct() {
+			global $pagenow;
+
 			$widget_ops = array(
 				'classname'                   => 'widget_contact_info',
 				'description'                 => __( 'Display a map with your location, hours, and contact information.', 'jetpack' ),
@@ -33,7 +35,7 @@ if ( ! class_exists( 'Jetpack_Contact_Info_Widget' ) ) {
 			);
 			$this->alt_option_name = 'widget_contact_info';
 
-			if ( is_customize_preview() ) {
+			if ( is_customize_preview() || 'widgets.php' === $pagenow ) {
 				add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 			}
 		}
